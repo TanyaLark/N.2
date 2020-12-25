@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    background-image: url('./Img/backgroundN2.png'); 
+    background-size: cover;
+    background-color:lightgreen;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    height: 100vh;    
+}
+
+h1{
+    color: darkblue;
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+}
+h3{
+    color: white;
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+}
+
+label{
+    color: white;
+    font-family: 'Raleway';
+    font-weight: 400;
+}
+
