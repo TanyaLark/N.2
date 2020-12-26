@@ -12,13 +12,14 @@ let appConfig = {
     methods: {
        checkedAll: function(){
            this.checked = !this.checked;
-           if(this.checked){
-               for (let element of this.NBU) {
-                   this.checkedAttractions.push(element.attraction);
-               }
-           }else{
-                this.checkedAttractions = [];
-           }
+           console.log(this.checked)
+        //    if(this.checked){
+        //        for (let element of this.NBU) {
+        //            this.checkedAttractions.push(element.attraction);
+        //        }
+        //    }else{
+        //         this.checkedAttractions = [];
+        //    }
        }
     },
     computed:{
@@ -96,7 +97,7 @@ app.component('component-debt', {
     props: [ 'comprepaydate', 'compattraction', 'compgrouparr', 'flag' ],
     data(){
         return{
-            checkedC: false
+            checkedC: this.flag
         }
     },
     methods:{
@@ -108,11 +109,17 @@ app.component('component-debt', {
                 this.compgrouparr.splice(this.compgrouparr.indexOf(this.compattraction), 1)
             }  
         }
+    },
+    computed:{
+        componentsCheck: function(){
+            let checkedC = this.flag;
+            return checkedC
+        }
     }, 
     template:/*html*/ `
     <div  class="custom-control custom-checkbox my-2" >
         <input  type="checkbox" class="custom-control-input" id="repaydate" value="attraction" v-model='checkedC' @click="checkedComponentToArr"> 
-        <label  class="custom-control-label" for="repaydate" > Год {{ comprepaydate }} Долг для выплат: {{compattraction}} грн.</label>
+        <label  class="custom-control-label" for="repaydate" > Год {{ comprepaydate }} Долг для выплат: {{compattraction}} грн.   Flag {{flag}}  CheckedC {{checkedC}}</label>
     </div>  
     `
 });
